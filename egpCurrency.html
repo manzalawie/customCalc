@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="images/favicon.ico" rel="icon" />
+    <link rel="stylesheet" href="style/bootstrap.min.css" />
+    <link rel="stylesheet" href="font-awesome/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style.css" />
+    <title>Custom Calc</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav
+          class="navbar navbar-expand-lg bg-body-tertiary"
+          data-bs-theme="dark"
+        >
+          <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="currView.html">أسعار العملات</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">تضريبة السجائر</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="foreignCur.html">
+                    التضريبة بالعملات الأجنبية
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="egpCurrency.html"
+                    >التضريبة بالعملة المصرية</a
+                  >
+                </li>
+                <li class="nav-item ms-5">
+                  <a class="nav-link" href="index.html">الرئيــــسية</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="container" style="margin-top: 50px; text-align: center">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header">تضريبة بالعملة المصرية</div>
+                <div
+                  class="card-body"
+                  style="
+                    text-align: right;
+                    direction: rtl;
+                    color: #000;
+                    font-weight: bold;
+                    font-size: 1.3rem;
+                  "
+                >
+                  <div class="form-group">
+                    <input
+                      type="number"
+                      id="typed_value"
+                      name="typed_value"
+                      class="form-control col-md-6"
+                      placeholder="القيمة الجمركية للعينة"
+                    />
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-md-6">
+                      <label class="form-label" for="percentageSelect">
+                        النسبة المئوية
+                      </label>
+                      <select
+                        class="form-select"
+                        id="percentageSelect"
+                        name="percenatge"
+                      >
+                        <option value="2">2</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label class="form-label" for="perc14"> نسبة 14 % </label>
+                      <select class="form-select" id="perc14" name="perc14">
+                        <option value="0">لا</option>
+                        <option value="1" selected>نعم</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-md-4">
+                      <label class="form-label" for="perc5"> نسبة 5 % </label>
+                      <select class="form-select" id="perc5" name="perc5">
+                        <option value="0" selected>لا</option>
+                        <option value="1">نعم</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                      <label class="form-label" for="perc8"> نسبة 8 % </label>
+                      <select class="form-select" name="perc8" id="perc8">
+                        <option value="0" selected>لا</option>
+                        <option value="1">نعم</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                      <label class="form-label" for="perc10"> نسبة 10 % </label>
+                      <select class="form-select" name="perc10" id="perc10">
+                        <option value="0" selected>لا</option>
+                        <option value="1">نعم</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+                <div class="newitem" id="newitem"></div>
+                <div class="d-flex justify-content-between m-3">
+                  <button
+                    onclick="result()"
+                    class="btn pe-5 ps-5 btn-outline-success"
+                  >
+                    Result
+                  </button>
+                  <button
+                    class="btn pe-3 ps-3 btn-outline-success"
+                    onclick="addItem()"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section id="resultSection">
+      <div class="container" style="margin-top: 50px; text-align: center">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header">النتيجة</div>
+              <div
+                class="card-body"
+                style="
+                  text-align: center;
+                  direction: rtl;
+                  font-weight: bold;
+                  font-size: 18px;
+                "
+              >
+                <div class="table-responsive result-table">
+                  <table class="main-table table table-bordered">
+                    <tr>
+                      <td>قيمة جمركية</td>
+                      <td>نسبة تحصيل الجمرك</td>
+                      <td>نسبة 14%</td>
+                    </tr>
+                    <tr>
+                      <td id="customValue"></td>
+                      <td id="customFees"></td>
+                      <td id="fees14Result"></td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="table-responsive result-table">
+                  <table class="main-table table table-bordered">
+                    <tr>
+                      <td>نسبة 5%</td>
+                      <td>نسبة 8%</td>
+                      <td>نسبة 10%</td>
+                    </tr>
+                    <tr>
+                      <td id="fees5Result"></td>
+                      <td id="fees8Result"></td>
+                      <td id="fees10Result"></td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="table-responsive result-table">
+                  <table class="main-table table table-bordered">
+                    <tr>
+                      <td>الأرضية</td>
+                    </tr>
+                    <tr>
+                      <td id="postalResult"></td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="table-responsive result-table">
+                  <table class="main-table table table-bordered">
+                    <tr>
+                      <td>المبلغ الكلي المطلوب تحصيله بدون رسوم العرض</td>
+                    </tr>
+                    <tr>
+                      <td id="totalResult"></td>
+                    </tr>
+                  </table>
+                </div>
+                <hr />
+                شكل الكشف على السيستم
+                <br />
+                ................
+                <div class="table-responsive result-table mt-3" dir="ltr">
+                  <table class="main-table table table-bordered">
+                    <tr style="direction: ltr">
+                      <td>Declared Value</td>
+                      <td>Customs Fees</td>
+                      <td>Tax Amount</td>
+                      <td>Postal Fees</td>
+                      <td>Fees 8%</td>
+                      <td>Dev. Fee</td>
+                    </tr>
+                    <tr>
+                      <td id="declaredValue"></td>
+                      <td id="customsFeesTable"></td>
+                      <td id="taxAmount"></td>
+                      <td id="postalAmount"></td>
+                      <td id="fees8Table"></td>
+                      <td id="devFee"></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

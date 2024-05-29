@@ -1,0 +1,26 @@
+body {
+  background-image: url(../images/bg.jpg);
+}
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+.form-group {
+  margin-top: 0.5rem;
+}
+.main-table tr td,
+.currency,
+.col-md-6,
+.col-md-4 {
+  background-color: ghostwhite;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
