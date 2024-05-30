@@ -44,7 +44,7 @@ var currenciesArNames = [
   "دينار أردني",
   "يوان صيني",
 ];
-
+/*
 for (let i = 0; i < currenciesArNames.length; i++) {
   var tr = document.createElement("tr");
   var td1 = document.createElement("td");
@@ -59,7 +59,7 @@ for (let i = 0; i < currenciesArNames.length; i++) {
   tr.appendChild(td2);
   currBodyView.appendChild(tr);
 }
-
+*/
 for (let i = 0; i < currenciesArNames.length; i++) {
   const option = document.createElement("option");
   var keys = currenciesToArray[i];
