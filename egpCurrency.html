@@ -40,7 +40,7 @@
                   <a class="nav-link" href="currView.html">أسعار العملات</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">تضريبة السجائر</a>
+                  <a class="nav-link" href="segar.html">تضريبة السجائر</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="foreignCur.html">
@@ -80,101 +80,102 @@
             </div>
           </div>
         </nav>
-        <div class="container" style="margin-top: 50px; text-align: center">
-          <div class="row justify-content-center">
-            <div class="col-md-8">
-              <div class="card">
-                <div class="card-header">تضريبة بالعملة المصرية</div>
-                <div
-                  class="card-body"
-                  style="
-                    text-align: right;
-                    direction: rtl;
-                    color: #000;
-                    font-weight: bold;
-                    font-size: 1.3rem;
-                  "
+      </div>
+    </header>
+    <section id="tadriba">
+      <div class="container" style="margin-top: 50px; text-align: center">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header">تضريبة بالعملة المصرية</div>
+              <div
+                class="card-body"
+                style="
+                  text-align: right;
+                  direction: rtl;
+                  color: #000;
+                  font-weight: bold;
+                  font-size: 1.3rem;
+                "
+              >
+                <div class="form-group">
+                  <input
+                    type="number"
+                    id="typed_value"
+                    name="typed_value"
+                    class="form-control col-md-6"
+                    placeholder="القيمة الجمركية للعينة"
+                  />
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-6">
+                    <label class="form-label" for="percentageSelect">
+                      النسبة المئوية
+                    </label>
+                    <select
+                      class="form-select"
+                      id="percentageSelect"
+                      name="percenatge"
+                    >
+                      <option value="2">2</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label class="form-label" for="perc14"> نسبة 14 % </label>
+                    <select class="form-select" id="perc14" name="perc14">
+                      <option value="0">لا</option>
+                      <option value="1" selected>نعم</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-4">
+                    <label class="form-label" for="perc5"> نسبة 5 % </label>
+                    <select class="form-select" id="perc5" name="perc5">
+                      <option value="0" selected>لا</option>
+                      <option value="1">نعم</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group col-md-4">
+                    <label class="form-label" for="perc8"> نسبة 8 % </label>
+                    <select class="form-select" name="perc8" id="perc8">
+                      <option value="0" selected>لا</option>
+                      <option value="1">نعم</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group col-md-4">
+                    <label class="form-label" for="perc10"> نسبة 10 % </label>
+                    <select class="form-select" name="perc10" id="perc10">
+                      <option value="0" selected>لا</option>
+                      <option value="1">نعم</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <hr />
+              <div class="newitem" id="newitem"></div>
+              <div class="d-flex justify-content-between m-3">
+                <button
+                  onclick="result()"
+                  class="btn pe-5 ps-5 btn-outline-success"
+                  id="resultBtn"
                 >
-                  <div class="form-group">
-                    <input
-                      type="number"
-                      id="typed_value"
-                      name="typed_value"
-                      class="form-control col-md-6"
-                      placeholder="القيمة الجمركية للعينة"
-                    />
-                  </div>
-                  <div class="row">
-                    <div class="form-group col-md-6">
-                      <label class="form-label" for="percentageSelect">
-                        النسبة المئوية
-                      </label>
-                      <select
-                        class="form-select"
-                        id="percentageSelect"
-                        name="percenatge"
-                      >
-                        
-                        <option value="0">معفي</option>
-                        <option value="2">2</option>
-                      </select>
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label class="form-label" for="perc14"> نسبة 14 % </label>
-                      <select class="form-select" id="perc14" name="perc14">
-                        <option value="0">لا</option>
-                        <option value="1" selected>نعم</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="form-group col-md-4">
-                      <label class="form-label" for="perc5"> نسبة 5 % </label>
-                      <select class="form-select" id="perc5" name="perc5">
-                        <option value="0" selected>لا</option>
-                        <option value="1">نعم</option>
-                      </select>
-                    </div>
-
-                    <div class="form-group col-md-4">
-                      <label class="form-label" for="perc8"> نسبة 8 % </label>
-                      <select class="form-select" name="perc8" id="perc8">
-                        <option value="0" selected>لا</option>
-                        <option value="1">نعم</option>
-                      </select>
-                    </div>
-
-                    <div class="form-group col-md-4">
-                      <label class="form-label" for="perc10"> نسبة 10 % </label>
-                      <select class="form-select" name="perc10" id="perc10">
-                        <option value="0" selected>لا</option>
-                        <option value="1">نعم</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <hr />
-                <div class="newitem" id="newitem"></div>
-                <div class="d-flex justify-content-between m-3">
-                  <button
-                    onclick="result()"
-                    class="btn pe-5 ps-5 btn-outline-success"
-                  >
-                    Result
-                  </button>
-                  <button
-                    class="btn pe-3 ps-3 btn-outline-success"
-                    onclick="addItem()"
-                  >
-                    +
-                  </button>
-                </div>
+                  Result
+                </button>
+                <button
+                  class="btn pe-3 ps-3 btn-outline-success"
+                  onclick="addItem()"
+                >
+                  +
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </header>
+    </section>
     <section id="resultSection">
       <div class="container" style="margin-top: 50px; text-align: center">
         <div class="row justify-content-center">

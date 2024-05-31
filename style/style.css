@@ -28,3 +28,20 @@ footer a {
   text-decoration: none;
   color: aquamarine;
 }
+footer p:first-child {
+  font-size: 0.9rem;
+  color: bisque;
+}
+footer p {
+  margin-bottom: 0;
+}
+footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  /* background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  ); */
+}

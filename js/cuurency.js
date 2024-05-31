@@ -44,32 +44,33 @@ var currenciesArNames = [
   "دينار أردني",
   "يوان صيني",
 ];
-/*
-for (let i = 0; i < currenciesArNames.length; i++) {
-  var tr = document.createElement("tr");
-  var td1 = document.createElement("td");
-  var td2 = document.createElement("td");
+if (currBodyView !== null) {
+  for (let i = 0; i < currenciesArNames.length; i++) {
+    var tr = document.createElement("tr");
+    var td1 = document.createElement("td");
+    var td2 = document.createElement("td");
 
-  var keys = currenciesToArray[i];
+    var keys = currenciesToArray[i];
 
-  td1.textContent = currenciesArNames[i];
-  td2.textContent = currencies[keys];
+    td1.textContent = currenciesArNames[i];
+    td2.textContent = currencies[keys];
 
-  tr.appendChild(td1);
-  tr.appendChild(td2);
-  currBodyView.appendChild(tr);
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    currBodyView.appendChild(tr);
+  }
 }
-*/
-for (let i = 0; i < currenciesArNames.length; i++) {
-  const option = document.createElement("option");
-  var keys = currenciesToArray[i];
+if (selectElementcur !== null) {
+  for (let i = 0; i < currenciesArNames.length; i++) {
+    const option = document.createElement("option");
+    var keys = currenciesToArray[i];
 
-  option.value = currencies[keys];
-  option.text = currenciesArNames[i];
+    option.value = currencies[keys];
+    option.text = currenciesArNames[i];
 
-  selectElementcur.appendChild(option);
+    selectElementcur.appendChild(option);
+  }
 }
-
 function resultCur() {
   var customValueVal = Number(customValue.value);
   var selectElementVal = Number(selectElement.value);
