@@ -70,6 +70,31 @@ if (selectElementcur !== null) {
 
     selectElementcur.appendChild(option);
   }
+
+  if (tadribaSection !== null) {
+    tadribaSection.addEventListener("keydown", function (event) {
+      if (event.key === "d" || event.key === "D") {
+        selectElementcur.value = currencies.usd;
+      }
+    });
+  }
+
+  if (tadribaSection !== null) {
+    tadribaSection.addEventListener("keydown", function (event) {
+      if (event.key === "e" || event.key === "E") {
+        event.preventDefault();
+        selectElementcur.value = currencies.euro;
+      }
+    });
+  }
+
+  if (tadribaSection !== null) {
+    tadribaSection.addEventListener("keydown", function (event) {
+      if (event.key === "g" || event.key === "G") {
+        selectElementcur.value = currencies.gbp;
+      }
+    });
+  }
 }
 function resultCur() {
   var customValueVal = Number(customValue.value);

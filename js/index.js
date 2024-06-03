@@ -9,6 +9,7 @@ if (working == 1) {
         button.click();
       }
     });
+    
   }
   var customValue = document.getElementById("typed_value");
   var selectElement = document.getElementById("percentageSelect");
